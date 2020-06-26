@@ -1,16 +1,23 @@
 #container {
-  text-align: center;
+  //text-align: center;
+  text-align: left;
 
-  position: absolute;
+  background: url("../../assets/img/port.jpg");
+  background-size: cover;
+  height: 60%;
+
+  position: cover;
   left: 0;
   right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 25%;
 }
 
 #container strong {
-  font-size: 20px;
-  line-height: 26px;
+  font-size: 60px;
+  color: white;
+  line-height: 20px;
+  top: 60%;
+  
 }
 
 #container p {
@@ -18,7 +25,10 @@
   line-height: 22px;
 
   color: #8c8c8c;
-
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+  font-size: 18px;
   margin: 0;
 }
 
