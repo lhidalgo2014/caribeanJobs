@@ -1,0 +1,76 @@
+<ion-content fullscreen>
+  <form onsubmit="processForm(event)">
+    <ion-list> 
+      <ion-item>
+        <ion-label position="stacked">Stacked Label</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+      <br>
+      <ion-item>
+        <ion-label position="stacked">Nombre<ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required type="text" oninput="handleFirstNameValue(event)"></ion-input>
+      </ion-item>
+      <br>
+      <ion-item>
+        <ion-label position="stacked">Primer Apellido<ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required type="text" oninput="handleLastNameValue(event)"></ion-input>
+      </ion-item>   
+      <br>
+      <ion-item>
+        <ion-label position="stacked">Fecha de nacimiento<ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required type="date" oninput="handleLastNameValue(event)"></ion-input>
+      </ion-item>
+      <br>
+      <ion-item>
+        <ion-label position="stacked">Correo electrónio<ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required type="email" oninput="handleLastNameValue(event)"></ion-input>
+      </ion-item>
+      <br>
+      <ion-item>
+        <ion-label position="stacked">Teléfono 1<ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required type="number" oninput="handleLastNameValue(event)"></ion-input>
+      </ion-item>
+      <br>
+      <ion-item>
+        <ion-label position="stacked">Teléfono 2<ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required type="number" oninput="handleLastNameValue(event)"></ion-input>
+      </ion-item>
+      <br>
+      <ion-item>
+        <ion-label position="stacked">Provincia<ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required type="text" oninput="handleLastNameValue(event)"></ion-input>
+      </ion-item>
+      <br>
+      <ion-item>
+        <ion-label position="stacked">Cantón<ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required type="text" oninput="handleLastNameValue(event)"></ion-input>
+      </ion-item>
+      <br>
+      <ion-item>
+        <ion-label position="stacked">Distrito<ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required type="text" oninput="handleLastNameValue(event)"></ion-input>
+      </ion-item>
+      <br>
+      <ion-item>
+        <ion-label position="stacked">Nombre de usuario<ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required type="text" oninput="handleLastNameValue(event)"></ion-input>
+      </ion-item>
+      <br>
+      <ion-item>
+        <ion-label position="stacked">Contraseña<ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required type="password" oninput="handleLastNameValue(event)"></ion-input>
+      </ion-item>
+
+  </ion-list> 
+
+    <div class="ion-padding">
+      <br>
+      <br>
+      <ion-button expand="block" type="submit" class="ion-no-margin">registrar</ion-button>
+      <br>
+      <br>
+      <br>
+      <br>
+    </div>
+  </form>
+</ion-content>
