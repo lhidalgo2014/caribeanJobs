@@ -1,64 +1,127 @@
 <ion-content fullscreen>
-  <form onsubmit="processForm(event)">
+  <form [formGroup]="registrationForm" (ngSubmit)="submit()"> <!-- [formGroup]="myForm" (ngSubmit)="submit()"-->
     <ion-list> 
       <ion-item>
-        <ion-label position="stacked">Stacked Label</ion-label>
-        <ion-input></ion-input>
-      </ion-item>
-      <br>
-      <ion-item>
+        <ion-text>
+          <h4>INFORMACIÓN GENERAL</h4>
+        </ion-text>
         <ion-label position="stacked">Nombre<ion-text color="danger">*</ion-text></ion-label>
-        <ion-input required type="text" oninput="handleFirstNameValue(event)"></ion-input>
+        <ion-input required type="text" formControlName="nombre" ></ion-input>
       </ion-item>
       <br>
       <ion-item>
         <ion-label position="stacked">Primer Apellido<ion-text color="danger">*</ion-text></ion-label>
-        <ion-input required type="text" oninput="handleLastNameValue(event)"></ion-input>
+        <ion-input required type="text" formControlName="primerApellido"></ion-input>
       </ion-item>   
       <br>
       <ion-item>
+        <ion-label position="stacked">Segundo Apellido<ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required type="text" formControlName="segundoApellido"></ion-input>
+      </ion-item>  
+      <br>
+      <ion-item>
         <ion-label position="stacked">Fecha de nacimiento<ion-text color="danger">*</ion-text></ion-label>
-        <ion-input required type="date" oninput="handleLastNameValue(event)"></ion-input>
+        <ion-input required type="date" formControlName="fechaNacimiento"></ion-input>
       </ion-item>
       <br>
+      <hr noshade>
       <ion-item>
-        <ion-label position="stacked">Correo electrónio<ion-text color="danger">*</ion-text></ion-label>
-        <ion-input required type="email" oninput="handleLastNameValue(event)"></ion-input>
-      </ion-item>
-      <br>
-      <ion-item>
+        <ion-text>
+          <h4>INFORMACIÓN DE CONTACTO</h4>
+        </ion-text>
         <ion-label position="stacked">Teléfono 1<ion-text color="danger">*</ion-text></ion-label>
-        <ion-input required type="number" oninput="handleLastNameValue(event)"></ion-input>
+        <ion-input required type="number" formControlName="primerTelefono"></ion-input>
       </ion-item>
       <br>
       <ion-item>
         <ion-label position="stacked">Teléfono 2<ion-text color="danger">*</ion-text></ion-label>
-        <ion-input required type="number" oninput="handleLastNameValue(event)"></ion-input>
+        <ion-input required type="number" formControlName="segundoTelefono"></ion-input>
       </ion-item>
       <br>
       <ion-item>
+        <ion-label position="stacked">Correo electrónio<ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required type="email" formControlName="correo"></ion-input>
+      </ion-item>
+      <br>
+      <hr noshade>
+      <ion-item>
+        <ion-text>
+          <h4>UBICACIÓN</h4>
+        </ion-text>
         <ion-label position="stacked">Provincia<ion-text color="danger">*</ion-text></ion-label>
-        <ion-input required type="text" oninput="handleLastNameValue(event)"></ion-input>
+        <ion-input required type="text" formControlName="provincia"></ion-input>
       </ion-item>
       <br>
       <ion-item>
         <ion-label position="stacked">Cantón<ion-text color="danger">*</ion-text></ion-label>
-        <ion-input required type="text" oninput="handleLastNameValue(event)"></ion-input>
+        <ion-input required type="text" formControlName="canton"></ion-input>
       </ion-item>
       <br>
       <ion-item>
         <ion-label position="stacked">Distrito<ion-text color="danger">*</ion-text></ion-label>
-        <ion-input required type="text" oninput="handleLastNameValue(event)"></ion-input>
+        <ion-input required type="text" formControlName="distrito"></ion-input>
       </ion-item>
       <br>
+      <hr noshade>
       <ion-item>
+        <ion-text>
+          <h4>INFORMACIÓN DE ACCESO</h4>
+        </ion-text>
         <ion-label position="stacked">Nombre de usuario<ion-text color="danger">*</ion-text></ion-label>
-        <ion-input required type="text" oninput="handleLastNameValue(event)"></ion-input>
+        <ion-input required type="text" formControlName="usuario"></ion-input>
       </ion-item>
       <br>
       <ion-item>
         <ion-label position="stacked">Contraseña<ion-text color="danger">*</ion-text></ion-label>
-        <ion-input required type="password" oninput="handleLastNameValue(event)"></ion-input>
+        <ion-input required type="password" formControlName="contrasena"></ion-input>
+      </ion-item>
+      <br>
+      <hr noshade>
+      <ion-item>
+        <ion-text>
+          <h4>INFORMACIÓN DE PROFESIÓN</h4>
+        </ion-text>
+        <ion-label position="stacked">Nombre<ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required type="text" formControlName="nombreProfesion"></ion-input>
+      </ion-item>
+      <br>
+      <ion-item>
+        <ion-label position="stacked">Años de experiencia<ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required type="number" formControlName="anosProfesion"></ion-input>
+      </ion-item>   
+      <br>
+      <ion-item>
+        <ion-label position="stacked">Descripción de profesión<ion-text color="danger">*</ion-text></ion-label>
+        <ion-textarea required formControlName="descripcionProfesion"></ion-textarea>
+      </ion-item>  
+      <br>
+      <ion-item>
+        <ion-label position="stacked">Costo por hora(colones)<ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required type="number" formControlName="costoHora"></ion-input>
+      </ion-item>
+      <br>
+      <ion-item>
+        <ion-label position="stacked">Horario disponible<ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required type="text" formControlName="horarioDisponible"></ion-input>
+      </ion-item> 
+      <br>
+      <ion-item>
+        <ion-label position="stacked">Zona de trabajo<ion-text color="danger">*</ion-text></ion-label>
+        <ion-textarea required formControlName="zonaTrabajo"></ion-textarea>
+      </ion-item> 
+      <br>
+      <hr noshade>
+      <ion-item>
+        <ion-text>
+          <h4>DATOS DE REFERENCIA</h4>
+        </ion-text>
+        <ion-label position="stacked">Nombre<ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required type="text" formControlName="nombreReferencia"></ion-input>
+      </ion-item>
+      <br>
+      <ion-item>
+        <ion-label position="stacked">Teléfono<ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required type="number" formControlName="telefonoReferencia"></ion-input>
       </ion-item>
 
   </ion-list> 
@@ -66,9 +129,7 @@
     <div class="ion-padding">
       <br>
       <br>
-      <ion-button expand="block" type="submit" class="ion-no-margin">registrar</ion-button>
-      <br>
-      <br>
+      <ion-button [disabled]="!registrationForm.valid" expand="block" type="submit" class="ion-no-margin">registrar</ion-button>
       <br>
       <br>
     </div>

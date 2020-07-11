@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ReactiveFormsModule, FormGroup, FormBuilder, Validators } from "@angular/forms";
+import { SearchService } from "src/app/services/search.service";
+import { HttpClient } from "@angular/common/http"
 
 @Component({
   selector: 'app-search',
@@ -7,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
-  constructor() { }
+  constructor(private formBuilder: FormBuilder, private searchService:SearchService) { }
 
   ngOnInit() {}
 

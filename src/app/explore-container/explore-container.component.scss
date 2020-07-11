@@ -12,7 +12,8 @@
 }
 
 #container strong {
-  font-size: 60px;
+  font-family: Helvetica;
+  font-size: 40px;
   color: white;
   line-height: 20px;
   top: 60%;
@@ -33,4 +34,10 @@
 
 #container a {
   text-decoration: none;
+}
+
+#cards {
+  font-family: Helvetica;
+  top:-10px;
+  border-radius: 10%;
 }
