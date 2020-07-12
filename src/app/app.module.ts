@@ -14,6 +14,7 @@ import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from '@angular/common/http';
 
+import { PipesModule } from './pipes/pipes.module';
 
 
 
@@ -25,7 +26,8 @@ import { HttpClientModule } from '@angular/common/http';
     IonicModule.forRoot(), 
     AppRoutingModule, 
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    PipesModule
   ],
   providers: [
     StatusBar,

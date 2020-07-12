@@ -6,13 +6,25 @@ const Oferta = require('../models/Oferta');
 
 //@routes GET /post
 //@desc get a post
-router.get('/search',async (req, res) =>{
+router.get('/search/id',async (req, res) =>{
+    
     try{
-        const posts = await Posts.find();
+        const posts = await Oferta.find(req.body._id);
         if(!posts) throw Error('no items');
         res.status(200).json(posts);
     }catch(err){
-        res.status(400).json({msg:err})
+        res.status(400).json({msg:"algo anda mal"})
+    }
+});
+
+
+router.get('/search',async (req, res) =>{
+    try{
+        const posts = await Oferta.find(req.body.nombre);
+        if(!posts) throw Error('no items');
+        res.status(200).json(posts);
+    }catch(err){
+        res.status(400).json({msg:"algo anda mal"})
     }
 });
 
@@ -23,7 +35,7 @@ router.post('/register', async (req, res) => {
     const nuevaOferta = new Oferta({
         nombre: req.body.nombre,
         primerApellido: req.body.primerApellido,
-        /*segundoApellido: req.body.segundoApellido,
+        segundoApellido: req.body.segundoApellido,
         fechaNacimiento: req.body.fechaNacimiento,
         primerTelefono: req.body.primerTelefono,
         segundoTelefono: req.body.segundoTelefono,
@@ -40,13 +52,9 @@ router.post('/register', async (req, res) => {
         horarioDisponible: req.body.horarioDisponible,
         zonaTrabajo: req.body.zonaTrabajo,
         nombreReferencia: req.body.nombreReferencia,
-        telefonoReferencia: req.body.telefonoReferencia*/
+        telefonoReferencia: req.body.telefonoReferencia
     });
     try{
-        /*const post = await nuevaOferta.save();
-        if(!post) throw Error('algo ha salido mal cuando se registraba oferta');
-
-        res.status(200).json(post);*/
         const post = await nuevaOferta.save();
         console.log(post);
         if(!post){

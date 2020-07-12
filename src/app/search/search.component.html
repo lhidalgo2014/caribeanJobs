@@ -1,12 +1,18 @@
 
 <ion-content padding>
 <!-- Animated Searchbar -->
-<ion-searchbar animated placeholder="buscar oferta" [(ngModel)]="searchTerm"></ion-searchbar>
+<ion-searchbar (ionChange)="submit($event)" animated placeholder="buscar oferta"></ion-searchbar>
 
 <ion-list>
-    <ion-item button *ngFor="let item of ">
-
-    </ion-item>
+    <ion-card button *ngFor="let item of ofertas | filter:textoBuscar">
+        <br>
+        {{item.nombre}}
+        <br>
+        {{item.canton}}
+        <br>
+        {{item.primerTelefono}}
+        <br>
+    </ion-card>
 </ion-list>
 
 </ion-content>

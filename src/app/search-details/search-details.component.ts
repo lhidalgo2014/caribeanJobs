@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { SearchService } from '../services/search.service';
 
 @Component({
   selector: 'app-search-details',
@@ -7,8 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchDetailsComponent implements OnInit {
 
-  constructor() { }
+  information = null;
 
-  ngOnInit() {}
+  constructor(private activatedRoute: ActivatedRoute, private searchService: SearchService) { }
+
+  ngOnInit() {
+    let id = this.activatedRoute.snapshot.paramMap.get('_id');
+
+    this.searchService.getDetails(id).subscribe(result => {
+      this.information = result;
+    })
+  }
 
 }

@@ -5,9 +5,10 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { SearchComponent } from './search.component';
+import { PipesModule } from '../pipes/pipes.module';
 
 @NgModule({
-  imports: [ CommonModule, FormsModule, IonicModule],
+  imports: [ CommonModule, FormsModule, IonicModule, PipesModule],
   declarations: [SearchComponent],
   exports: [SearchComponent]
 })

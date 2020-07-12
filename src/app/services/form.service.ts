@@ -11,7 +11,6 @@ export class FormService {
   constructor(private http: HttpClient, private router:Router ) { }
 
   agregarOferta(cons){
-    console.log(cons);
     let headers = new HttpHeaders();
     headers.append('Content-Type','application/json');
     return this.http.post('http://localhost:5000/ofertas/register',cons,{headers:headers})

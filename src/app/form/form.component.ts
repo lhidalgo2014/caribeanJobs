@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertController, Platform } from '@ionic/angular';
 import { ReactiveFormsModule, FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { FormService } from "src/app/services/form.service";
 import { HttpClient } from "@angular/common/http"
@@ -98,7 +99,8 @@ registrationForm = this.formBuilder.group({
 
   constructor(
     private formBuilder: FormBuilder,
-     private formService:FormService
+     private formService:FormService,
+     public alertController: AlertController
      ) { }
 
   ngOnInit() {}
@@ -127,10 +129,26 @@ registrationForm = this.formBuilder.group({
       telefonoReferencia: this.telefonoReferencia.value
     }
     this.formService.agregarOferta(cons).subscribe(array =>{
-      console.log(array);
+      console.log(array); 
+      this.presentAlert();
+      this.registrationForm.reset();
     },
     err=>{
       return false;
     });
   }
+
+
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'SALIR',
+      //subHeader: 'Subtitle',
+      message: 'La oferta de trabajo se ha registrado con éxito.',
+      buttons: ['ok']
+    });
+
+    await alert.present();
+  }
+
 }

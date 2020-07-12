@@ -9,7 +9,7 @@ const OfertaSchema = new Schema({
     primerApellido:{
         type: String,
         required: true
-    }/*,  
+    },  
     segundoApellido:{
         type: String,
         required: true
@@ -19,11 +19,11 @@ const OfertaSchema = new Schema({
         required: true
     }, 
     primerTelefono:{
-        type: Number,
+        type: String,
         required: true
     }, 
     segundoTelefono:{
-        type: Number,
+        type: String,
         required: true
     }, 
     correo:{
@@ -55,7 +55,7 @@ const OfertaSchema = new Schema({
         required: true
     }, 
     anosProfesion:{
-        type: Number,
+        type: String,
         required: true
     }, 
     descripcionProfesion:{
@@ -63,7 +63,7 @@ const OfertaSchema = new Schema({
         required: true
     },
     costoHora:{
-        type: Number,
+        type: String,
         required: true
     },    
     horarioDisponible:{
@@ -79,9 +79,9 @@ const OfertaSchema = new Schema({
         required: true
     }, 
     telefonoReferencia:{
-        type: Number,
+        type: String,
         required: true
-    }*/
+    }
 });
 
 module.exports = mongoose.model('Oferta',OfertaSchema);
