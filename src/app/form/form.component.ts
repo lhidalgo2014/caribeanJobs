@@ -50,7 +50,7 @@ get contrasena(){
   return this.registrationForm.get('contrasena');
 }
 get nombreProfesion(){
-  return this.registrationForm.get('nombre');
+  return this.registrationForm.get('nombreProfesion');
 }
 get anosProfesion(){
   return this.registrationForm.get('anosProfesion');

@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs">inicio</ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+  <ion-item *ngFor="let item of oferta">
+    <ion-avatar slot="start">
+        <img src="../../assets/img/avatar.png">
+    </ion-avatar>
+    <ion-text>
+        <h4>nombre: {{ item.nombre }}  </h4>
+        <h4>edad:   {{ item.primerApellido }}  </h4>
+        <h4>canton: {{ item.segundoApellido }}  </h4>
+        <h4>edad: {{ ageCalculator(item.fechaNacimiento) }} </h4>
+        <h4>telefono 1: {{ item.primerTelefono }}  </h4>
+        <h4>telefono 2: {{ item.segundoTelefono }}  </h4>
+        <h4>correo: {{ item.correo }}  </h4>
+        <h4>provincia: {{ item.provincia }}  </h4>
+        <h4>canton: {{ item.canton }}  </h4>
+        <h4>distrito: {{ item.distrito }}  </h4>
+        <h4>profesión: {{ item.nombreProfesion }}  </h4>
+        <h4>años de profesión: {{ item.anosProfesion }}  </h4>
+        <h4>descripción: {{ item.descripcionProfesion }}  </h4>
+        <h4>costo por hora: {{ item.costoHora }}  </h4>
+        <h4>disponibilidad: {{ item.horarioDisponible }}  </h4>
+        <h4>zona de trabajo: {{ item.zonaTrabajo }}  </h4>
+        <h4>nombre: {{ item.nombreReferencia }}  </h4>
+        <h4>teléfono: {{ item.telefonoReferencia }}  </h4>
+        </ion-text>
+</ion-item>
+</ion-list>
+</ion-content>
+<tabs></tabs>

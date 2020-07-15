@@ -20,7 +20,7 @@ export class SearchService {
   getDetails(id){
       let headers = new HttpHeaders();
       headers.append('Content-Type','application/json');
-      return this.http.get<any[]>('http://localhost:5000/ofertas/search/id',{headers:headers})
+      return this.http.get<any[]>('http://localhost:5000/ofertas/search/'+id,{headers:headers})
         .pipe(map((res) => res)); 
   }
 

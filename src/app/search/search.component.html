@@ -3,16 +3,27 @@
 <!-- Animated Searchbar -->
 <ion-searchbar (ionChange)="submit($event)" animated placeholder="buscar oferta"></ion-searchbar>
 
+<ion-item>
+    <ion-label></ion-label>
+    <ion-select [(ng-model)]="mySelect" (ionChange)="submitColumn($event)" placeholder="nombre">
+        <ion-select-option value="nombreProfesion">profesión</ion-select-option>
+        <ion-select-option value="zonaTrabajo">zona de trabajo</ion-select-option>
+        <ion-select-option value="nombre">nombre</ion-select-option>
+    </ion-select>
+</ion-item>
+
 <ion-list>
-    <ion-card button *ngFor="let item of ofertas | filter:textoBuscar">
-        <br>
-        {{item.nombre}}
-        <br>
-        {{item.canton}}
-        <br>
-        {{item.primerTelefono}}
-        <br>
-    </ion-card>
+    <ion-item button *ngFor="let item of ofertas | filter: textoBuscar: columna" (click)="goToDetails(item._id)">
+        <ion-avatar slot="start">
+            <img src="../../assets/img/avatar.png">
+        </ion-avatar>
+        <ion-text>
+            <h5>nombre: {{ item.nombre }}  </h5>
+            <h5>edad:   {{ ageCalculator(item.fechaNacimiento) }}  </h5>
+            <h5>canton: {{ item.canton }}  </h5>
+            <h5>telefono:  {{ item.primerTelefono }} </h5>
+            </ion-text>
+    </ion-item>
 </ion-list>
 
 </ion-content>
@@ -20,4 +31,4 @@
  
 
 
-
+<!--[routerLink]="['/', 'tabs/tabs3' item._id]   href="/search-details"-->

@@ -9,6 +9,10 @@ const routes: Routes = [
   {
     path: 'salir',
     loadChildren: () => import('./salir/salir.module').then( m => m.SalirPageModule)
+  },
+  {
+    path: 'search-details/:id',
+    loadChildren: () => import('./search-details/search-details.module').then( m => m.SearchDetailsPageModule)
   }
 ];
 @NgModule({

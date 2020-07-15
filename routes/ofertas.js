@@ -6,12 +6,12 @@ const Oferta = require('../models/Oferta');
 
 //@routes GET /post
 //@desc get a post
-router.get('/search/id',async (req, res) =>{
+router.get('/search/:id',async (req, res) =>{
     
     try{
-        const posts = await Oferta.find(req.body._id);
-        if(!posts) throw Error('no items');
-        res.status(200).json(posts);
+        const post = await Oferta.findById(req.params.id);
+        if(!post) throw Error('no item');
+        res.status(200).json(post);
     }catch(err){
         res.status(400).json({msg:"algo anda mal"})
     }

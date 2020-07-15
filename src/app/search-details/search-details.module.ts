@@ -4,11 +4,20 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { SearchDetailsComponent } from './search-details.component';
+import { SearchDetailsPageRoutingModule } from './search-details-routing.module';
+
+import { SearchDetailsPage } from './search-details.page';
+
+import { PipesModule } from '../pipes/pipes.module';
 
 @NgModule({
-  imports: [ CommonModule, FormsModule, IonicModule],
-  declarations: [SearchDetailsComponent],
-  exports: [SearchDetailsComponent]
+  imports: [
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    SearchDetailsPageRoutingModule,
+    PipesModule
+  ],
+  declarations: [SearchDetailsPage]
 })
-export class SearchDetailsComponentModule {}
+export class SearchDetailsPageModule {}
